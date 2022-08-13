@@ -17,7 +17,7 @@ var (
 	once    sync.Once
 )
 
-func Monitor(serviceName string, namespace string) func(next echo.HandlerFunc) echo.HandlerFunc {
+func Monitor(serviceName string) func(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
 			t := time.Now()
@@ -33,9 +33,6 @@ func Monitor(serviceName string, namespace string) func(next echo.HandlerFunc) e
 				metrics = promauto.NewHistogramVec(prometheus.HistogramOpts{
 					Name: fmt.Sprintf("%s_rest_interface", serviceName),
 					Help: fmt.Sprintf("%s rest interface requests", serviceName),
-					ConstLabels: prometheus.Labels{
-						"env": namespace,
-					},
 				}, []string{"endpoint", "status_code", "user_id", "method", "err"})
 			})
 
