@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"bitbucket.org/bexstech/middleware/context"
 	"github.com/labstack/echo"
+	"github.com/notnull-co/middleware/context"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 )

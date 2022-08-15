@@ -1,4 +1,4 @@
-module bitbucket.org/bexstech/middleware
+module github.com/notnull-co/middleware
 
 go 1.18
 

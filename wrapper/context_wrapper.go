@@ -1,7 +1,7 @@
 package wrapper
 
 import (
-	_ctx "bitbucket.org/bexstech/middleware/context"
+	_ctx "github.com/notnull-co/middleware/context"
 
 	"github.com/labstack/echo"
 )
